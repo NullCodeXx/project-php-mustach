@@ -3,11 +3,13 @@
 
 require('vendor/autoload.php');
 $m = new Mustache_Engine([
-    //Charger les fichiers.
-    'loader' => new Mustache_Loader_filesystemLoader(dirname(__FILE__).'/template')
+    //Charger les fichiers, nouvel object.
+    'loader' => new Mustache_Loader_filesystemLoader(dirname(__FILE__).'/template',
+     //Change extension.
+     ['extension' => '.html']) 
 ]);
 //render, va venir remplacer la variable name ou venir charger la page que l'on lui préçise.
 echo $m->render("index", [ 
-'name' => "le monde"
+'name' => "Djaafar"
 ]);
 ?>
